@@ -24,12 +24,13 @@ const Styles = StyleSheet.create({
     },
     text_header: {
         color: '#fff',
-        fontWeight: 'bold',
+        fontFamily: 'TitilliumWeb-Bold',
         fontSize: 30
     },
     text_footer: {
         color: '#05375a',
-        fontSize: 18
+        fontSize: 13,
+        fontFamily: 'TitilliumWeb-Light',
     },
     action: {
         flexDirection: 'row',
@@ -49,11 +50,13 @@ const Styles = StyleSheet.create({
         flex: 1,
         marginTop: Platform.OS === 'ios' ? 0 : -12,
         paddingLeft: 10,
+        fontSize: 12,
         color: '#05375a',
     },
     errorMsg: {
         color: '#FF0000',
         fontSize: 14,
+        fontFamily: 'TitilliumWeb-Regular',
     },
     button: {
         alignItems: 'center',
@@ -67,8 +70,8 @@ const Styles = StyleSheet.create({
         borderRadius: 10
     },
     textSign: {
-        fontSize: 18,
-        fontWeight: 'bold'
+        fontSize: 15,
+        fontFamily: 'TitilliumWeb-SemiBold',
     }
   });
 

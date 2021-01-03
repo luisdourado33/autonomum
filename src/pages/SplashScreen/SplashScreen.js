@@ -3,10 +3,8 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Dimensions,
-    Stylesheet,
     StatusBar,
-    Image
+    ImageBackground
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
@@ -16,20 +14,39 @@ import { useTheme } from '@react-navigation/native';
 // Page Styles
 import Styles from './Styles';
 
+// Components
+import CardSlide from '../../components/CardSlide/CardSlide';
+
+// Fast-Messages
+import * as Message from '../../assets/messages/SplashScreenMsg';
+
 const SplashScreen = ({ navigation }) => {
     const { colors } = useTheme();
+    const viewTexture = require('../../assets/orange-texture.jpg');
+    const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
     return (
-        <View style={Styles.container}>
+        <ImageBackground
+            source={viewTexture}
+            style={Styles.container}>
             <StatusBar backgroundColor='black' barStyle="light-content" />
             <View style={Styles.header}>
-                <Animatable.Image
+                {/* <Animatable.Image
                     animation="bounceIn"
                     duraton="1500"
                     source={require('../../assets/logo.png')}
                     style={Styles.logo}
                     resizeMode="stretch"
-                />
+                /> */}
+
+                <View style={Styles.logoAndTextView}>
+                    <Text style={Styles.logoText}>Autonomum!</Text>
+                    <Text style={Styles.appDescriptionText}>
+                        {Message.autonomumSlogan}
+                    </Text>
+
+                    <CardSlide />
+                </View>
             </View>
             <Animatable.View
                 style={[Styles.footer, {
@@ -40,39 +57,28 @@ const SplashScreen = ({ navigation }) => {
                 <Text style={[Styles.title, {
                     color: colors.text
                 }]}>Junte-se a nossa comunidade!</Text>
-                <Text style={Styles.text}>Entre com sua conta</Text>
+                <View style={Styles.aboutUsView}>
+                    <Text style={Styles.text}>
+                        {Message.aboutUs}
+                    </Text>
+                </View>
                 <View style={Styles.button}>
-                    <View style={Styles.buttonGroup}>
-                        <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
-                            <LinearGradient
-                                colors={['orange', 'orange']}
-                                style={Styles.signIn}
-                            >
-                                <Text style={Styles.textSign}>Acessar</Text>
-                                <MaterialIcons
-                                    name="navigate-next"
-                                    color="#fff"
-                                    size={20}
-                                />
-                            </LinearGradient>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
-                            <LinearGradient
-                                colors={['orange', 'orange']}
-                                style={Styles.signIn}
-                            >
-                                <Text style={Styles.textSign}>Sobre</Text>
-                                <MaterialIcons
-                                    name="navigate-next"
-                                    color="#fff"
-                                    size={20}
-                                />
-                            </LinearGradient>
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
+                        <LinearGradient
+                            colors={['orange', 'orange']}
+                            style={Styles.signIn}
+                        >
+                            <Text style={Styles.buttonText}>Acessar</Text>
+                            <MaterialIcons
+                                name="navigate-next"
+                                color="#fff"
+                                size={20}
+                            />
+                        </LinearGradient>
+                    </TouchableOpacity>
                 </View>
             </Animatable.View>
-        </View>
+        </ImageBackground>
     );
 };
 

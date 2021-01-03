@@ -109,7 +109,8 @@ const SignInScreen = ({ navigation }) => {
                         placeholder="Digite seu e-mail"
                         placeholderTextColor="#666666"
                         style={[Styles.textInput, {
-                            color: "#333"
+                            color: "#333",
+                            fontFamily: 'TitilliumWeb-Regular',
                         }]}
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}
@@ -149,7 +150,8 @@ const SignInScreen = ({ navigation }) => {
                         placeholderTextColor="#666666"
                         secureTextEntry={data.secureTextEntry ? true : false}
                         style={[Styles.textInput, {
-                            color: "#333"
+                            color: "#333",
+                            fontFamily: 'TitilliumWeb-Regular',
                         }]}
                         autoCapitalize="none"
                         onChangeText={(val) => handlePasswordChange(val)}
@@ -180,7 +182,7 @@ const SignInScreen = ({ navigation }) => {
 
 
                 <TouchableOpacity>
-                    <Text style={{ color: '#333', marginTop: 15 }}>Esqueceu a sua senha?</Text>
+                    <Text style={{ color: '#333', marginTop: 15, fontFamily: 'TitilliumWeb-Light' }}>Esqueceu a sua senha?</Text>
                 </TouchableOpacity>
                 <View style={Styles.button}>
                     <TouchableOpacity
