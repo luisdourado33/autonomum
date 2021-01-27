@@ -1,3 +1,11 @@
+/**
+ * Autonomum App
+ * https://github.com/luisdourado33/Autonomum
+ *
+ * @format
+ * @flow strict-local
+ */
+
 import React from 'react';
 import {
     View,
@@ -13,6 +21,15 @@ import { useTheme } from '@react-navigation/native';
 
 // Page Styles
 import Styles from './Styles';
+
+/**
+ * Definições padrão
+ */
+
+import {
+    defaultFont
+} from '../../assets/default';
+
 
 // Components
 import CardSlide from '../../components/CardSlide/CardSlide';

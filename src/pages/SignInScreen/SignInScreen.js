@@ -18,7 +18,13 @@ import Feather from 'react-native-vector-icons/Feather';
 // Page Styles
 import Styles from './Styles';
 
+
+
 const SignInScreen = ({ navigation }) => {
+
+    const handleSignIn = () => {
+        navigation.navigate('OnboardingScreen')
+    }
 
     const [data, setData] = useState({
         username: '',
@@ -187,7 +193,7 @@ const SignInScreen = ({ navigation }) => {
                 <View style={Styles.button}>
                     <TouchableOpacity
                         style={Styles.signIn}
-                        onPress={() => { loginHandle(data.username, data.password) }}
+                        onPress={handleSignIn}
                     >
                         <LinearGradient
                             colors={['orange', 'orange']}

@@ -3,6 +3,14 @@ import {
     Dimensions
 } from 'react-native';
 
+/**
+ * Definições padrão
+ */
+
+import {
+    defaultFont
+} from '../../assets/default';
+
 const { height } = Dimensions.get("screen");
 const height_logo = height * 0.2;
 
@@ -34,12 +42,12 @@ const Styles = StyleSheet.create({
         height: height_logo
     },
     logoText: {
-        fontFamily: 'TitilliumWeb-Bold',
+        fontFamily: defaultFont('Bold'),
         fontSize: 30,
         paddingTop: 30
     },
     appDescriptionText: {
-        fontFamily: 'TitilliumWeb-Light',
+        fontFamily: defaultFont('Light'),
         fontSize: 15,
         flex: 0,
         display: 'flex',
@@ -50,7 +58,7 @@ const Styles = StyleSheet.create({
         alignSelf: 'center'
     },
     sloganText: {
-        fontFamily: 'TitilliumWeb-SemiBold',
+        fontFamily: defaultFont('SemiBold'),
         fontSize: 15,
         color: '#333',
         alignSelf: 'center',
@@ -58,11 +66,11 @@ const Styles = StyleSheet.create({
     },
     title: {
         color: '#05375a',
-        fontFamily: 'TitilliumWeb-Bold',
+        fontFamily: defaultFont('Bold'),
         fontSize: 22,
     },
     text: {
-        fontFamily: 'TitilliumWeb-Light',
+        fontFamily: defaultFont('Light'),
         color: 'grey'
     },
     button: {
@@ -71,7 +79,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
     },
     buttonText: {
-        fontFamily: 'TitilliumWeb-SemiBold',
+        fontFamily: defaultFont('SemiBold'),
         color: '#FFF'
     },
     signIn: {
@@ -86,7 +94,7 @@ const Styles = StyleSheet.create({
     },
     textSign: {
         color: 'white',
-        fontFamily: 'TitilliumWeb-SemiBold',
+        fontFamily: defaultFont('SemiBold'),
     },
     aboutUsView: {
         marginTop: 15,

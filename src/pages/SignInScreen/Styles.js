@@ -3,10 +3,18 @@ import {
     Platform
 } from 'react-native';
 
+/**
+ * Definições padrão
+ */
+
+import {
+    defaultFont
+} from '../../assets/default';
+
 const Styles = StyleSheet.create({
     container: {
-      flex: 1, 
-      backgroundColor: 'orange'
+        flex: 1,
+        backgroundColor: 'orange'
     },
     header: {
         flex: 1,
@@ -24,13 +32,13 @@ const Styles = StyleSheet.create({
     },
     text_header: {
         color: '#fff',
-        fontFamily: 'TitilliumWeb-Bold',
+        fontFamily: defaultFont('Bold'),
         fontSize: 30
     },
     text_footer: {
         color: '#05375a',
         fontSize: 13,
-        fontFamily: 'TitilliumWeb-Light',
+        fontFamily: defaultFont('Light'),
     },
     action: {
         flexDirection: 'row',
@@ -56,7 +64,7 @@ const Styles = StyleSheet.create({
     errorMsg: {
         color: '#FF0000',
         fontSize: 14,
-        fontFamily: 'TitilliumWeb-Regular',
+        fontFamily: defaultFont('Regular'),
     },
     button: {
         alignItems: 'center',
@@ -71,8 +79,8 @@ const Styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 15,
-        fontFamily: 'TitilliumWeb-SemiBold',
+        fontFamily: defaultFont('SemiBold'),
     }
-  });
+});
 
 export default Styles;
