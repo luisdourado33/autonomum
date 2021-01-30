@@ -10,6 +10,14 @@ const defaultFont = (fontWeight) => {
     return 'TitilliumWeb-' + fontWeight;
 }
 
+/**
+ * Objeto mock
+ */
+
+const Mock = {
+    'userPicture': require('./../assets/navbar/img/perfil.jpeg')
+}
 export {
-    defaultFont
+    defaultFont,
+    Mock
 }

@@ -60,7 +60,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     const doneAction = () => {
         Alert.alert('Autonomum', 'Você será redirecionado para o painel.')
-        navigation.navigate('DashboardScreen')
+        navigation.navigate('DrawerScreen')
     }
     return (
         <>

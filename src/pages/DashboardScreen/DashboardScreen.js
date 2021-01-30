@@ -19,11 +19,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useTheme } from '@react-navigation/native';
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-
-const Drawer = createDrawerNavigator();
-
 // Page Styles
 import Styles from './Styles';
 
@@ -63,13 +58,7 @@ const DashboardScreen = ({ navigation }) => {
     const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
     return (
-        <NavigationContainer independent>
-            <Drawer.Navigator
-                initialRouteName="Main">
-                <Drawer.Screen name="Main" component={Main} />
-            </Drawer.Navigator>
-        </NavigationContainer>
-
+        <Main />
     );
 };
 

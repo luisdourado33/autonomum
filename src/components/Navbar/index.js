@@ -13,8 +13,12 @@ import * as Animatable from 'react-native-animatable';
 
 // Icon
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const Navbar = (props) => {
+
+    const navigation = useNavigation();
+
     return (
         <View style={Styles.container}>
             <TouchableOpacity>
@@ -30,7 +34,10 @@ const Navbar = (props) => {
                         size={20}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity style={[Styles.menuItem, { marginRight: 0 }]}>
+                <TouchableOpacity
+                    style={[Styles.menuItem, { marginRight: 0 }]}
+                    onPress={() => navigation.toggleDrawer()}
+                >
                     <Animatable.Image
                         animation="bounceIn"
                         duraton="1500"
