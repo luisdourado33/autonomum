@@ -11,9 +11,13 @@ import Styles from './Styles';
 
 import * as Animatable from 'react-native-animatable';
 
+// React Native Paper
+import { Chip } from 'react-native-paper';
+
 // Icon
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import { defaultFont } from '../../assets/default';
 
 const Navbar = (props) => {
 
@@ -28,11 +32,11 @@ const Navbar = (props) => {
             {/* Inicio - Menu */}
             <View style={Styles.menuContainer}>
                 <TouchableOpacity style={Styles.menuItem}>
-                    <FontAwesome
-                        name="bell-o"
-                        color="#333"
-                        size={20}
-                    />
+                    <Chip
+                        mode="outlined"
+                        style={{ fontFamily: defaultFont('Light') }}
+                        icon="chat"
+                        onPress={() => alert('Pressed')}>{props.notification} mensagens</Chip>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[Styles.menuItem, { marginRight: 0 }]}

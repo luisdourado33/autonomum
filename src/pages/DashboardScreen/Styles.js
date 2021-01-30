@@ -23,7 +23,7 @@ const Styles = StyleSheet.create({
         margin: 15,
     },
     header: {
-        flex: 1,
+        flex: 0,
         padding: 0,
         justifyContent: 'flex-start',
         alignItems: 'flex-start'
@@ -38,6 +38,13 @@ const Styles = StyleSheet.create({
         alignSelf: 'flex-start',
         width: height_logo - 90,
         height: height_logo - 90
+    },
+    userPicture: {
+        alignSelf: 'flex-start',
+        borderRadius: 50,
+        marginRight: 15,
+        width: height_logo - 110,
+        height: height_logo - 110
     },
     logoText: {
         fontFamily: defaultFont('Bold'),

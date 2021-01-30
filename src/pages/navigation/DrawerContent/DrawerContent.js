@@ -105,19 +105,10 @@ export function DrawerContent(props) {
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={Styles.bottomDrawerSection}>
-                <DrawerItem
-                    icon={({ color, size }) => (
-                        <Icon
-                            name="exit-to-app"
-                            color={color}
-                            size={size}
-                        />
-                    )}
-                    labelStyle={{
-                        fontFamily: defaultFont('SemiBold')
-                    }}
-                    label="Fazer logoff"
-                    onPress={() => alert('Logoff')}
+                <DrawerItemComponent
+                    icon="exit-to-app"
+                    label="Sair"
+                    message="Logoff"
                 />
             </Drawer.Section>
         </View>
