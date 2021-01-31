@@ -17,6 +17,7 @@ const defaultFont = (fontWeight) => {
 const Mock = {
     'userPicture': require('./../assets/navbar/img/perfil.jpeg')
 }
+
 export {
     defaultFont,
     Mock

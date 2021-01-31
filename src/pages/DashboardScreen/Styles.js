@@ -105,6 +105,35 @@ const Styles = StyleSheet.create({
         marginTop: 15,
         alignContent: 'stretch',
         alignContent: 'center'
+    },
+    animatableContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 15,
+        borderColor: '#eee',
+        borderRadius: 2,
+        elevation: 0,
+        borderWidth: 1,
+        margin: 15
+    },
+    helloUser: {
+        padding: 15
+    },
+    helloUserTitle: {
+        fontSize: 25,
+        fontFamily: defaultFont('Light')
+    },
+    searchContainer: {
+        padding: 15,
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    searchInput: {
+        flex: 1,
+        backgroundColor: 'white',
+        marginBottom: 10,
+        fontFamily: defaultFont('Light')
     }
 });
 

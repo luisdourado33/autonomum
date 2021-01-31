@@ -59,7 +59,7 @@ const Skip = ({ isLight, skipLabel, ...props }) => (
 const OnboardingScreen = ({ navigation }) => {
 
     const doneAction = () => {
-        Alert.alert('Autonomum', 'Você será redirecionado para o painel.')
+        // Alert.alert('Autonomum', 'Você será redirecionado para o painel.')
         navigation.navigate('DrawerScreen')
     }
     return (

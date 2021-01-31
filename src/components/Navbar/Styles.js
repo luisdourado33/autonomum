@@ -22,6 +22,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: 'row',
+        paddingTop: 35,
         padding: 20
     },
 
@@ -44,6 +45,14 @@ const Styles = StyleSheet.create({
 
     menuItem: {
         marginHorizontal: 16
+    },
+    badgeStyle: {
+        backgroundColor: 'orange',
+        fontFamily: defaultFont('Bold'),
+        position: 'absolute',
+        margin: 8,
+        bottom: 1,
+        flex: 1
     }
 });
 
