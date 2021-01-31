@@ -22,6 +22,12 @@ const Styles = StyleSheet.create({
     logoAndTextView: {
         margin: 15,
     },
+    fab: {
+        position: 'absolute',
+        margin: 16,
+        right: 0,
+        bottom: -100,
+    },
     header: {
         flex: 0,
         padding: 0,
@@ -70,9 +76,20 @@ const Styles = StyleSheet.create({
         justifyContent: 'center'
     },
     title: {
-        color: '#05375a',
+        color: 'orange',
         fontFamily: defaultFont('Bold'),
-        fontSize: 22,
+        fontSize: 18,
+    },
+    caption: {
+        bottom: 10,
+        fontFamily: defaultFont('Light')
+    },
+    titleContainer: {
+        padding: 15,
+        paddingBottom: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     text: {
         fontFamily: defaultFont('Light'),

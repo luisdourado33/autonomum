@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Page import
 import DrawerScreen from '../navigation/DrawerScreen';
+import BottomTabScreen from '../navigation/BottomTabScreen';
 import SplashScreen from '../../pages/SplashScreen/SplashScreen';
 import SignInScreen from '../SignInScreen/SignInScreen';
 import OnboardingScreen from '../OnboardingScreen/OnboardingScreen';
@@ -19,6 +20,7 @@ const RootStackScreen = ({ navigation }) => {
             <RootStack.Screen name="OnboardingScreen" component={OnboardingScreen} />
             <RootStack.Screen name="DashboardScreen" component={DashboardScreen} />
             <RootStack.Screen name="DrawerScreen" component={DrawerScreen} />
+            <RootStack.Screen name="BottomTabScreen" component={BottomTabScreen} />
         </RootStack.Navigator>
     );
 }

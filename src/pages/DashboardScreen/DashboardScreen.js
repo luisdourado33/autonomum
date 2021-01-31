@@ -27,12 +27,11 @@ import Styles from './Styles';
 // React Native Paper
 import {
     Button,
-    Avatar,
     Title,
+    Caption,
     TextInput,
+    FAB
 } from 'react-native-paper';
-
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" color="orange" />
 
 /**
  * Definições padrão
@@ -43,9 +42,13 @@ import {
     Mock
 } from '../../assets/default';
 
+/**
+ * Helpers
+ */
+
+import Helper from '../../helpers/functions';
 
 // Components
-import CardSlide from '../../components/CardSlide/CardSlide';
 import CardPublish from '../../components/CardPublish/CardPublish';
 import Navbar from '../../components/Navbar';
 
@@ -57,39 +60,8 @@ import UserMessage from '../../assets/userMessageMock';
 
 const Main = () => {
 
-    const { colors } = useTheme();
-    const [progressNum, setProgressNum] = useState(0);
     const [text, setText] = useState('');
     const [news, setNews] = useState(UserMessage);
-    const [isPublishing, setIsPublishing] = useState(true);
-
-    const generateRandomNumber = (array) => {
-        return Math.floor(Math.random() * array.length)
-    }
-
-    const addNews = () => {
-        let dataAtual = new Date(Date.now());
-
-        let dia = dataAtual.getDay();
-        let mes = dataAtual.getMonth();
-        let ano = dataAtual.getFullYear();
-
-        if (text != '') {
-            setNews(news => [...news,
-            {
-                mensagem: text,
-                dia,
-                mes,
-                ano
-            }
-            ]);
-
-            setText('');
-            setIsPublishing(false);
-        } else {
-            alert('Mensagem vazia não permitida.')
-        }
-    }
 
     return (
         <ScrollView style={Styles.container}>
@@ -101,11 +73,10 @@ const Main = () => {
                         notification={news.length}
                         sectionTitle="Dashboard" />
                 </View>
-
                 <View style={Styles.helloUser}>
                     <Title style={Styles.helloUserTitle}>
-                        {Message.randomHello[generateRandomNumber(Message.randomHello)]}, {'\n'}<Text style={{ fontFamily: defaultFont('Bold') }}>
-                            luisdourado33</Text>!
+                        {Message.randomHello[Helper.generateRandomNumber(Message.randomHello)]}, {'\n'}<Text style={{ fontFamily: defaultFont('Bold') }}>
+                            Luís Dourado</Text>!
                     </Title>
                 </View>
 
@@ -140,40 +111,13 @@ const Main = () => {
                         </Button>
                     </TouchableOpacity>
                 </View>
-
-                {isPublishing && <Animatable.View
-                    animation={'slideInDown'}
-                    duraton="1500"
-                    style={{ padding: 15 }}>
-                    <TextInput
-                        style={{ marginBottom: 10, fontFamily: defaultFont('Light') }}
-                        theme={{
-                            fonts: {
-                                regular: {
-                                    fontFamily: defaultFont('Light')
-                                }
-                            },
-                            colors: { primary: 'orange', underlineColor: 'transparent', }
-                        }}
-                        selectionColor="orange"
-                        underlineColor="orange"
-                        label="What's new?"
-                        mode="outlined"
-                        value={text}
-                        onChangeText={text => setText(text)}
-                    />
-                    <Button
-                        labelStyle={{
-                            fontFamily: defaultFont('Regular')
-                        }}
-                        uppercase={false}
-                        color="orange"
-                        icon="plus"
-                        mode="contained"
-                        onPress={addNews}>
-                        Publicar ({news.length})
-            </Button>
-                </Animatable.View>}
+                <View style={Styles.titleContainer}>
+                    <View>
+                        <Title style={Styles.title}>Membros</Title>
+                        <Caption style={Styles.caption}>Cadastrados nas últimas 24 horas</Caption>
+                    </View>
+                    <FontAwesome name="user-o" size={25} />
+                </View>
                 <ScrollView
                     horizontal
                     showsHorizontalScrollIndicator={false}
@@ -195,13 +139,21 @@ const Main = () => {
                                         style={{
                                             fontFamily: defaultFont('Regular'),
 
-                                        }}>Luís Dourado</Text>
+                                        }}>{item.username}</Text>
                                     <Text style={{ fontFamily: defaultFont('Light'), fontSize: 10 }}>Cadastro em {item.dia}/{item.mes}/{item.ano}</Text>
                                 </View>
                             </Animatable.View>
                         ))
                     }
                 </ScrollView>
+
+                <View style={Styles.titleContainer}>
+                    <View>
+                        <Title style={Styles.title}>Publicações</Title>
+                        <Caption style={Styles.caption}>Encontre profissionais qualificados</Caption>
+                    </View>
+                    <FontAwesome name="comment-o" size={25} />
+                </View>
                 <ScrollView>
                     {news &&
                         news.map(item => (
@@ -223,10 +175,6 @@ const Main = () => {
     );
 }
 const DashboardScreen = ({ navigation }) => {
-    const { colors } = useTheme();
-    const viewTexture = require('../../assets/orange-texture.jpg');
-    const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
-
     return (
         <Main />
     );
